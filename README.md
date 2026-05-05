@@ -1,5 +1,7 @@
 # Jupyter Console Launcher
 
+A vscode extension that lets you open a jupyter console connected to the same kernel as the currently open notebook.
+
 Opens a `jupyter console --existing` session connected to the **exact kernel** that is active in the current VS Code notebook — no manual `%connect_info` needed.
 
 ## Usage
