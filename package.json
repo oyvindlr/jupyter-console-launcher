@@ -1,0 +1,48 @@
+{
+  "name": "jupyter-console-launcher",
+  "displayName": "Jupyter Console Launcher",
+  "description": "Open a Jupyter console connected to the active notebook's kernel with one click or keyboard shortcut",
+  "version": "0.1.0",
+  "publisher": "oyvindlr",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": ["Other"],
+  "keywords": ["jupyter", "notebook", "console", "kernel", "ipython"],
+  "activationEvents": ["onStartupFinished"],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "jupyter-console.openConsole",
+        "title": "Open Jupyter Console for Active Kernel",
+        "shortTitle": "Jupyter Console",
+        "icon": "$(terminal)"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "jupyter-console.openConsole",
+        "key": "ctrl+shift+j",
+        "mac": "cmd+shift+j",
+        "when": "notebookEditorFocused"
+      }
+    ],
+    "menus": {
+      "notebook/toolbar": [
+        {
+          "command": "jupyter-console.openConsole",
+          "group": "navigation@99",
+          "when": "notebookType == jupyter-notebook"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "jupyter-console.openConsole"
+        }
+      ]
+    }
+  },
+  "extensionDependencies": [],
+  "license": "MIT"
+}
